@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速上手 | Gobatis</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?c307b48e1c6d0bf015b3d856d788356d";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    <meta name="description" content="Golang 持久层框架">
+    
+    <link rel="preload" href="/assets/css/0.styles.9880f7bf.css" as="style"><link rel="preload" href="/assets/js/app.92e5bf0d.js" as="script"><link rel="preload" href="/assets/js/2.c1d4ece0.js" as="script"><link rel="preload" href="/assets/js/17.6a24c3df.js" as="script"><link rel="prefetch" href="/assets/js/10.02d76fe9.js"><link rel="prefetch" href="/assets/js/11.afe49a94.js"><link rel="prefetch" href="/assets/js/12.596fe063.js"><link rel="prefetch" href="/assets/js/13.471337f0.js"><link rel="prefetch" href="/assets/js/14.044f4c11.js"><link rel="prefetch" href="/assets/js/15.13621d7c.js"><link rel="prefetch" href="/assets/js/16.d7a333ef.js"><link rel="prefetch" href="/assets/js/18.c7084efc.js"><link rel="prefetch" href="/assets/js/19.43458d00.js"><link rel="prefetch" href="/assets/js/20.fe615918.js"><link rel="prefetch" href="/assets/js/21.cba3c210.js"><link rel="prefetch" href="/assets/js/22.058001f9.js"><link rel="prefetch" href="/assets/js/23.e8b8b673.js"><link rel="prefetch" href="/assets/js/24.7276a368.js"><link rel="prefetch" href="/assets/js/25.cf1d5f28.js"><link rel="prefetch" href="/assets/js/26.a2f75f8c.js"><link rel="prefetch" href="/assets/js/27.294beb76.js"><link rel="prefetch" href="/assets/js/28.d087c115.js"><link rel="prefetch" href="/assets/js/29.5642936e.js"><link rel="prefetch" href="/assets/js/3.fe5842d3.js"><link rel="prefetch" href="/assets/js/30.d9f65488.js"><link rel="prefetch" href="/assets/js/31.f281b19c.js"><link rel="prefetch" href="/assets/js/32.f6a4e562.js"><link rel="prefetch" href="/assets/js/4.0f42ec01.js"><link rel="prefetch" href="/assets/js/5.d1643f0c.js"><link rel="prefetch" href="/assets/js/6.117bca46.js"><link rel="prefetch" href="/assets/js/7.f6de2743.js"><link rel="prefetch" href="/assets/js/8.147727cf.js"><link rel="prefetch" href="/assets/js/9.ec115955.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9880f7bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Gobatis</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/introduction.html" class="nav-link">
+  文档
+</a></div><div class="nav-item"><a href="https://github.com/gobatis/gobatis" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/getting-started.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  zh-CN
+</a></li><li class="dropdown-item"><!----> <a href="/en/getting-started.html" class="nav-link">
+  en-US
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/introduction.html" class="nav-link">
+  文档
+</a></div><div class="nav-item"><a href="https://github.com/gobatis/gobatis" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/getting-started.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  zh-CN
+</a></li><li class="dropdown-item"><!----> <a href="/en/getting-started.html" class="nav-link">
+  en-US
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>入门指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/introduction.html" class="sidebar-link">介绍</a></li><li><a href="/getting-started.html" aria-current="page" class="active sidebar-link">快速上手</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/getting-started.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/getting-started.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/getting-started.html#main" class="sidebar-link">Main</a></li><li class="sidebar-sub-header"><a href="/getting-started.html#entity" class="sidebar-link">Entity</a></li><li class="sidebar-sub-header"><a href="/getting-started.html#mapper" class="sidebar-link">Mapper</a></li><li class="sidebar-sub-header"><a href="/getting-started.html#sql" class="sidebar-link">SQL</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>SQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sqlmap-xml.html" class="sidebar-link">XML映射文件</a></li><li><a href="/dynamic-sql.html" class="sidebar-link">动态 SQL</a></li><li><a href="/expression.html" class="sidebar-link">表达式</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高级主题</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/engine.html" class="sidebar-link">Engine</a></li><li><a href="/mapper.html" class="sidebar-link">Mapper</a></li><li><a href="/entity.html" class="sidebar-link">Entity</a></li><li><a href="/tx.html" class="sidebar-link">事务</a></li><li><a href="/log.html" class="sidebar-link">日志</a></li><li><a href="/pool.html" class="sidebar-link">连接池</a></li><li><a href="/deploy.html" class="sidebar-link">部署</a></li><li><a href="/performance.html" class="sidebar-link">性能</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>开发</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dtd.html" class="sidebar-link">XML语法提示</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速上手"><a href="#快速上手" class="header-anchor">#</a> 快速上手</h1> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 引入库</span>
+go get -u github.com/gobatis/gobatis
+
+<span class="token comment"># 安装 XML 语法映射文件</span>
+<span class="token function">sh</span> -c <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> -fsSL https://gobatis.co/dtd/dtd.sh<span class="token variable">)</span></span>&quot;</span>
+</code></pre></div><p>示例地址：<a href="https://github.com/gobatis/gobatis/tree/master/example" target="_blank" rel="noopener noreferrer">https://github.com/gobatis/gobatis/tree/master/example<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <div class="language- extra-class"><pre class="language-text"><code>project
+├── entity
+│   └── user.go        // 存放实体类
+├── mapper
+│   ├── mapper.go      // 定义 mapper
+└── sql
+│   └── migration.xml  // 迁移语句    
+│   └── user.xml       // users 表操作语句    
+├── main.go            // 程序入口    
+├── table.sql          // 示例数据表    
+</code></pre></div><h2 id="main"><a href="#main" class="header-anchor">#</a> Main</h2> <div class="custom-block tip"><p class="custom-block-title">文件路径</p> <p>project/main.go</p></div> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/gobatis/gobatis&quot;</span>
+	<span class="token string">&quot;github.com/gobatis/gobatis/example/entity&quot;</span>
+	<span class="token string">&quot;github.com/gobatis/gobatis/example/mapper&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	engine <span class="token operator">:=</span> gobatis<span class="token punctuation">.</span><span class="token function">NewPostgresql</span><span class="token punctuation">(</span><span class="token string">&quot;postgresql://postgres:postgres@127.0.0.1:5432/gobatis?connect_timeout=10&amp;sslmode=disable&quot;</span><span class="token punctuation">)</span>
+	err <span class="token operator">:=</span> engine<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span>gobatis<span class="token punctuation">.</span><span class="token function">NewBundle</span><span class="token punctuation">(</span><span class="token string">&quot;./sql&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicln</span><span class="token punctuation">(</span><span class="token string">&quot;Init error:&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	err <span class="token operator">=</span> engine<span class="token punctuation">.</span><span class="token function">BindMapper</span><span class="token punctuation">(</span>
+		mapper<span class="token punctuation">.</span>Migration<span class="token punctuation">,</span>
+		mapper<span class="token punctuation">.</span>User<span class="token punctuation">,</span>
+	<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicln</span><span class="token punctuation">(</span><span class="token string">&quot;Bind mapper error:&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> err <span class="token operator">=</span> engine<span class="token punctuation">.</span><span class="token function">Master</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Ping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicln</span><span class="token punctuation">(</span><span class="token string">&quot;Ping error:&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		engine<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	
+	err <span class="token operator">=</span> engine<span class="token punctuation">.</span><span class="token function">Master</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Migrate</span><span class="token punctuation">(</span>mapper<span class="token punctuation">.</span>Migration<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicf</span><span class="token punctuation">(</span><span class="token string">&quot;exec migration error: %v&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	
+	<span class="token comment">// AddUser</span>
+	rows<span class="token punctuation">,</span> err <span class="token operator">:=</span> mapper<span class="token punctuation">.</span>User<span class="token punctuation">.</span><span class="token function">AddUser</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span> <span class="token string">&quot;Tom&quot;</span><span class="token punctuation">,</span>
+		Age<span class="token punctuation">:</span>  <span class="token number">18</span><span class="token punctuation">,</span>
+		From<span class="token punctuation">:</span> <span class="token string">&quot;venus&quot;</span><span class="token punctuation">,</span>
+		Vip<span class="token punctuation">:</span>  <span class="token boolean">true</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">||</span> rows <span class="token operator">!=</span> <span class="token number">1</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Panicf</span><span class="token punctuation">(</span><span class="token string">&quot;Call AddUser error: &lt;%v, %d&gt;&quot;</span><span class="token punctuation">,</span> err<span class="token punctuation">,</span> rows<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="entity"><a href="#entity" class="header-anchor">#</a> Entity</h2> <div class="custom-block tip"><p class="custom-block-title">文件路径</p> <p>project/entity/user.go</p></div> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> entity
+
+<span class="token keyword">import</span> <span class="token string">&quot;time&quot;</span>
+
+<span class="token keyword">type</span> User <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Id        <span class="token builtin">int</span>        <span class="token string">`sql:&quot;id&quot;`</span>
+	Name      <span class="token builtin">string</span>     <span class="token string">`sql:&quot;name&quot;`</span>
+	Age       <span class="token builtin">int</span>        <span class="token string">`sql:&quot;age&quot;`</span>
+	From      <span class="token builtin">string</span>     <span class="token string">`sql:&quot;from&quot;`</span>
+	Vip       <span class="token builtin">bool</span>       <span class="token string">`sql:&quot;vip&quot;`</span>
+	CreatedAt <span class="token operator">*</span>time<span class="token punctuation">.</span>Time <span class="token string">`sql:&quot;created_at&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="mapper"><a href="#mapper" class="header-anchor">#</a> Mapper</h2> <div class="custom-block tip"><p class="custom-block-title">文件路径</p> <p>project/mapper/mapper.go</p></div> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> mapper
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;github.com/gobatis/gobatis&quot;</span>
+	<span class="token string">&quot;github.com/gobatis/gobatis/example/entity&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> <span class="token punctuation">(</span>
+	User      <span class="token operator">=</span> <span class="token operator">&amp;</span>userMapper<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	Migration <span class="token operator">=</span> <span class="token operator">&amp;</span>migrationMapper<span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> migrationMapper <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	CreateTable <span class="token keyword">func</span><span class="token punctuation">(</span>db <span class="token operator">*</span>gobatis<span class="token punctuation">.</span>DB<span class="token punctuation">)</span> <span class="token builtin">error</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> userMapper <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	AddUser         <span class="token keyword">func</span><span class="token punctuation">(</span>user <span class="token operator">*</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">)</span> <span class="token punctuation">(</span>rows <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+	AddUserReturnId <span class="token keyword">func</span><span class="token punctuation">(</span>user <span class="token operator">*</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">)</span> <span class="token punctuation">(</span>id <span class="token builtin">int</span><span class="token punctuation">,</span> createdAt time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+	UpdateUser      <span class="token keyword">func</span><span class="token punctuation">(</span>id <span class="token builtin">int</span><span class="token punctuation">,</span> vip <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>rows <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+	GetUserById     <span class="token keyword">func</span><span class="token punctuation">(</span>id <span class="token builtin">int64</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">,</span> age <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+	GetUserByName   <span class="token keyword">func</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>user <span class="token operator">*</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+	GetUserByFrom   <span class="token keyword">func</span><span class="token punctuation">(</span>places <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	QueryUsers      <span class="token keyword">func</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">*</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+	DeleteUsers     <span class="token keyword">func</span><span class="token punctuation">(</span>id <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>rows <span class="token builtin">int</span><span class="token punctuation">,</span> err <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="sql"><a href="#sql" class="header-anchor">#</a> SQL</h2> <div class="custom-block tip"><p class="custom-block-title">文件路径</p> <p>project/sql/migration.xml</p></div> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span> <span class="token name">PUBLIC</span> <span class="token string">&quot;-//gobatis.co//DTD Mapper 1.0//EN&quot;</span> <span class="token string">&quot;gobatis.co/dtd/mapper.dtd&quot;</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>CreateTable<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        create schema if not exists public;
+
+        create table if not exists users(
+        id serial constraint users_pk primary key,
+        name varchar,
+        age int,
+        &quot;from&quot; varchar,
+        vip bool,
+        created_at timestamp default current_timestamp
+        );
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">文件路径</p> <p>project/sql/user.xml</p></div> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span> <span class="token name">PUBLIC</span> <span class="token string">&quot;-//gobatis.co//DTD Mapper 1.0//EN&quot;</span> <span class="token string">&quot;gobatis.co/dtd/mapper.dtd&quot;</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>AddUser<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>user:struct<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        insert into users( name, age, &quot;from&quot;, vip ) values( #{user.Name}, #{user.Age}, #{user.From}, ${user.Vip})
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>update</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UpdateUser<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>id,vip<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        update users set vip = #{vip} where id = #{ id };
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>update</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!--  &amp;lt; 转义小于符号  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>DeleteUsers<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>id<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        delete from users where id <span class="token entity named-entity" title="&lt;">&amp;lt;</span>= #{id};
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>delete</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>AddUserReturnId<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>user<span class="token punctuation">&quot;</span></span> <span class="token attr-name">result</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>id,created_at<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        insert into users(name,age,&quot;from&quot;,vip ) values(#{user.Name},#{user.Age},#{user.From},${user.Vip} )
+        returning id,created_at;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>GetUserById<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>id:int64<span class="token punctuation">&quot;</span></span> <span class="token attr-name">result</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>name,age<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        select * from users where id=#{id};
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>GetUserByName<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        select * from users where name=#{name};
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>GetUserByFrom<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>places:[]string<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        select * from users where &quot;from&quot; in
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>foreach</span> <span class="token attr-name">index</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>index<span class="token punctuation">&quot;</span></span> <span class="token attr-name">item</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>item<span class="token punctuation">&quot;</span></span> <span class="token attr-name">collection</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>places<span class="token punctuation">&quot;</span></span> <span class="token attr-name">open</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>(<span class="token punctuation">&quot;</span></span> <span class="token attr-name">separator</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>,<span class="token punctuation">&quot;</span></span> <span class="token attr-name">close</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            #{item}
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>foreach</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>QueryUsers<span class="token punctuation">&quot;</span></span> <span class="token attr-name">parameter</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>m<span class="token punctuation">&quot;</span></span> <span class="token attr-name">result</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>*<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        select * from users
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>m[<span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span>] != nil<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+                name = #{m[&quot;name&quot;]}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>m[<span class="token punctuation">'</span>from<span class="token punctuation">'</span>] != nil<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                and &quot;from&quot; = #{m['from']}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>m[<span class="token punctuation">'</span>vip<span class="token punctuation">'</span>] != nil<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+                and vip = #{m['vip']}
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/introduction.html" class="prev">
+        介绍
+      </a></span> <span class="next"><a href="/sqlmap-xml.html">
+        XML映射文件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.92e5bf0d.js" defer></script><script src="/assets/js/2.c1d4ece0.js" defer></script><script src="/assets/js/17.6a24c3df.js" defer></script>
+  </body>
+</html>
